@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MICA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Título Principal -->
+    <main>
+        <h1>MICA</h1>
+        <h2>2024 'AMERICAN GOTHIC OFFICIAL MERCHANDISE</h2>
+
+        <!-- Botón del Carrito -->
+        <nav>
+            <a href="#" id="cart-button">Cart (<span id="cart-count">0</span>)</a>
+        </nav>
+        
+        <div class="product-grid">
+            <!-- Producto 1: Necklace -->
+            <div class="product" data-id="1">
+                <img src="images/necklace.png" alt="American Gothic Silver Tag Necklace">
+                <h3>American Gothic Silver Tag Necklace</h3>
+                <p>$15.00 USD</p>
+                <p>One Size</p>
+            </div>
+            <!-- Producto 2: T-Shirt -->
+            <div class="product" data-id="2">
+                <img src="images/tshirt.png" alt="Horned Deer Unisex T-Shirt">
+                <h3>Horned Deer Unisex T-Shirt</h3>
+                <p>$40.00 USD</p>
+                <p>Sizes: S, M, L, XL</p>
+            </div>
+            <!-- Producto 3: Scarf -->
+            <div class="product" data-id="3">
+                <img src="images/scarf.png" alt="Burnt American Flag Scarf">
+                <h3>Burnt American Flag Scarf</h3>
+                <p>$40.00 USD</p>
+                <p>One Size</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal para Detalles del Producto -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="product-close">&times;</span>
+            <div class="modal-body">
+                <img id="modal-image" src="" alt="Product Image">
+                <div class="modal-details">
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-description"></p>
+                    <p id="modal-size"></p>
+                    <p id="modal-price"></p>
+                    <!-- Añadimos selección de talla si aplica -->
+                    <div id="size-selector" style="display: none;">
+                        <label for="sizes">Select Size:</label>
+                        <select id="sizes">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+                    <button id="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para el Carrito -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="cart-close">&times;</span>
+            <h2>Your Cart</h2>
+            <div id="cart-items"></div>
+            <p id="cart-total"></p>
+            <button id="checkout-button">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Modal para Checkout -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="checkout-close">&times;</span>
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+                <h3>Shipping Information</h3>
+                <label for="full-name">Full Name:</label>
+                <input type="text" id="full-name" name="fullName" required>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+
+                <label for="state">State/Province:</label>
+                <input type="text" id="state" name="state" required>
+
+                <label for="zip">Zip/Postal Code:</label>
+                <input type="text" id="zip" name="zip" required>
+
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" required>
+
+                <h3>Payment Information</h3>
+                <!-- Información de pago simulada -->
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="cardNumber" required>
+
+                <label for="expiry-date">Expiry Date:</label>
+                <input type="text" id="expiry-date" name="expiryDate" placeholder="MM/YY" required>
+
+                <label for="cvv">CVV:</label>
+                <input type="text" id="cvv" name="cvv" required>
+
+                <button type="submit">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para Confirmación de Pedido -->
+    <div id="order-confirmation-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="order-confirmation-close">&times;</span>
+            <h2>Order Confirmation</h2>
+            <p>Thank you for your purchase!</p>
+            <p>Your order has been placed and will be processed shortly.</p>
+            <button id="close-confirmation-button">Close</button>
+        </div>
+    </div>
+
+    <!-- Pie de Página -->
+    <footer>
+        <p>&copy; 2024 Mica.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
