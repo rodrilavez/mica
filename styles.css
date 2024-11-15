@@ -1,30 +1,31 @@
-/* Global Styles */
+/* Estilos Globales */
 body {
     font-family: 'Helvetica', 'Arial', sans-serif;
     background-image: url('images/back.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: #000000; /* Black text */
+    color: #000000; /* Texto en negro */
     margin: 0;
 }
 
-/* Main Section */
+/* Sección Principal */
 main {
     padding: 20px;
-    text-align: center; /* Center the text */
+    text-align: center; /* Centrar el texto */
 }
 
 h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+    font-size: 3rem; /* Ajustado de 48px */
+    margin-bottom: 0.5rem;
 }
 
 h2 {
-    font-size: 24px;
-    margin-bottom: 40px;
+    font-size: 1.5rem; /* Ajustado de 24px */
+    margin-bottom: 2rem;
 }
 
+/* Grilla de Productos */
 .product-grid {
     display: flex;
     flex-wrap: wrap;
@@ -32,9 +33,10 @@ h2 {
     gap: 20px;
 }
 
+/* Estilos de Productos */
 .product {
-    width: 300px; /* Fixed width */
-    height: 450px; /* Fixed height to ensure same size */
+    flex: 1 1 calc(33.333% - 40px); /* Tres productos por fila */
+    max-width: 300px;
     text-align: center;
     transition: transform 0.3s;
     padding: 10px;
@@ -47,8 +49,8 @@ h2 {
 .product img {
     width: 100%;
     height: auto;
-    max-height: 250px; /* Ensures images don't exceed this height */
-    object-fit: contain; /* Ensures image fits within the container */
+    max-height: 250px; /* Asegura que las imágenes no excedan esta altura */
+    object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor */
     cursor: pointer;
 }
 
@@ -58,14 +60,15 @@ h2 {
 
 .product h3 {
     margin: 10px 0 5px 0;
-    font-size: 18px;
+    font-size: 1.1rem; /* Ajustado de 18px */
 }
 
 .product p {
     margin: 5px 0;
+    font-size: 1rem;
 }
 
-/* Modal Styles */
+/* Estilos para Modales */
 .modal {
     display: none;
     position: fixed;
@@ -94,7 +97,7 @@ h2 {
     position: absolute;
     top: 15px;
     right: 25px;
-    font-size: 30px;
+    font-size: 2rem; /* Ajustado de 30px */
     font-weight: bold;
     cursor: pointer;
 }
@@ -118,16 +121,17 @@ h2 {
 
 .modal-details h2 {
     margin-bottom: 20px;
+    font-size: 1.5rem;
 }
 
 .modal-details p {
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 1rem;
 }
 
 .modal-details button {
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 1rem; /* Ajustado de 18px */
     background-color: #000000;
     color: #ffffff;
     border: none;
@@ -143,7 +147,7 @@ h2 {
     margin-right: 10px;
 }
 
-/* Cart Modal Styles */
+/* Estilos del Modal del Carrito */
 #cart-items {
     margin: 20px 0;
 }
@@ -159,7 +163,7 @@ h2 {
 }
 
 #cart-total {
-    font-size: 20px;
+    font-size: 1.25rem; /* Ajustado de 20px */
     font-weight: bold;
     text-align: right;
     margin-top: 20px;
@@ -167,7 +171,7 @@ h2 {
 
 #checkout-button {
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 1rem; /* Ajustado de 18px */
     background-color: #000000;
     color: #ffffff;
     border: none;
@@ -176,7 +180,7 @@ h2 {
     margin-top: 20px;
 }
 
-/* Footer */
+/* Pie de Página */
 footer {
     background-color: transparent;
     padding: 10px;
@@ -184,25 +188,7 @@ footer {
     color: #000000;
 }
 
-/* Responsive Design */
-@media (max-width: 800px) {
-    .product-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .product {
-        width: 80%;
-        max-width: 300px;
-        height: auto;
-    }
-
-    .modal-content {
-        width: 90%;
-    }
-}
-
-/* Estilos para el botón del carrito */
+/* Estilos para el Botón del Carrito */
 nav {
     position: fixed;
     top: 10px;
@@ -231,12 +217,12 @@ nav a {
 #checkout-form input {
     padding: 8px;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 #checkout-form button {
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 1rem;
     background-color: #000000;
     color: #ffffff;
     border: none;
@@ -250,15 +236,71 @@ nav a {
 }
 
 #order-confirmation-modal p {
-    font-size: 18px;
+    font-size: 1rem;
     margin: 20px 0;
 }
 
 #close-confirmation-button {
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 1rem;
     background-color: #000000;
     color: #ffffff;
     border: none;
     cursor: pointer;
+}
+
+/* Diseño Responsivo */
+
+/* Tablets y Dispositivos Pequeños */
+@media (max-width: 992px) {
+    .product {
+        flex: 1 1 calc(50% - 40px); /* Dos productos por fila */
+    }
+}
+
+/* Teléfonos Móviles */
+@media (max-width: 600px) {
+    nav a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .product {
+        flex: 1 1 100%; /* Un producto por fila */
+        max-width: none;
+        margin: 0 0 20px 0;
+    }
+
+    .product-grid {
+        gap: 10px;
+    }
+
+    .product h3 {
+        font-size: 1rem;
+    }
+
+    .product p {
+        font-size: 0.9rem;
+    }
+
+    /* Ajustar tamaños de fuente en modales si es necesario */
+    .modal-content {
+        width: 90%;
+    }
+
+    .modal-details h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-details p {
+        font-size: 1rem;
+    }
 }
